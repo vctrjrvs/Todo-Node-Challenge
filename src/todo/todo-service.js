@@ -30,16 +30,15 @@ const TodoService = {
   },
   deleteTodo(db, todo_id) {
     return db('todo')
-      .where({'id': todo_id})
+      .where({ 'id': todo_id })
       .delete()
   },
   updateTodo(db, todo_id, newTodo) {
     return db('todo')
-      .where({id: todo_id})
-      .update(newTodo, returning=true)
+      .where({ id: todo_id })
+      .update(newTodo, returning = true)
       .returning('*')
   }
-
 }
 
 module.exports = TodoService
